@@ -1,24 +1,38 @@
 # README
+Basic authentication API with Event CRUD and Admin Users CRUD
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Admin namespace is available via `/admin`. Allows to edit and delete users. 
 
-Things you may want to cover:
+* Ruby version ``` 2.5.5```
 
-* Ruby version
+API for user authentication:
 
-* System dependencies
+## Sign Up
 
-* Configuration
+POST request to: ` http://localhost/api/v1/signup `
 
-* Database creation
+Data format: `form-data`
 
-* Database initialization
+Required fields:
+```
+user[email]
+user[password]
+```
 
-* How to run the test suite
+Sample request:
+`http://localhost:3000/api/v1/sign_up?user[email]=test@test.com&user[password]=123123123`
 
-* Services (job queues, cache servers, search engines, etc.)
+## Sign In
 
-* Deployment instructions
+POST request to: ` http://localhost/api/v1/signin `
 
-* ...
+Data format: `form-data`
+
+Required fields:
+```
+user[email]
+user[password]
+```
+
+Sample request:
+`http://localhost:3000/api/v1/sign_in?user[email]=test@test.com&user[password]=123123123`
