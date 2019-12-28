@@ -2,6 +2,11 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   devise_for :users
 
+  namespace :admin do
+    resources :users
+    root to: 'users#index'
+  end
+
   namespace :api, defaults: {format: :json} do
     namespace :v1 do
       devise_scope :user do
